@@ -1,0 +1,40 @@
+{
+  "users": [
+        {
+            "id": 1,
+            "name": "John",
+            "hobbies": [
+                {
+                    "id": 1,
+                    "name": "Playing football",
+                    "passion": "Medium",
+                    "year": "2014"
+                },
+                {
+                    "id": 2,
+                    "name": "Listening music",
+                    "passion": "Hight",
+                    "year": "2007"
+                },
+                {
+                    "id": 3,
+                    "name": "Going to concerts",
+                    "passion": "Low",
+                    "year": "2015"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Peter",
+            "hobbies": [
+                {
+                    "id": 1,
+                    "name": "Codding",
+                    "passion": "Very-Hight",
+                    "year": "2016"
+                }
+            ]
+        }
+    ]
+}

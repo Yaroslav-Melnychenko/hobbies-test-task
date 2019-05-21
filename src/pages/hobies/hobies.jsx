@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import User from '../../components/User';
-// import axios from 'axios';
 import './hobies.sass';
 
 class Hobies extends Component {
 
   state = {
-    name: ''
+    name: '',
+    selected: null
   }
 
   componentDidMount() {
-    // getUsers()
+    this.props.fetchUsers();
   }
 
   inputChange = (e) => {
@@ -21,13 +21,27 @@ class Hobies extends Component {
 
   addUser = () => {
     // create new user
-    console.log('create new user', this.state);
+    // console.log('create new user', this.state);
     this.setState({
       name: ''
     });
   }
 
+  userSelect = (id) => {
+    const { users } = this.props;
+    const [ user ] = users.filter((user) => user.id === id);
+    // console.log(...user);
+    this.setState({
+      selected: user
+    })
+  }
+
   render() {
+    
+    const { users } = this.props;
+    const { selected } = this.state;
+    // console.log(selected);
+
     return (
       <div className="container">
         <div className="head"><h2>User hobies</h2></div>
@@ -38,13 +52,15 @@ class Hobies extends Component {
               <button onClick={this.addUser} type="submit">Add</button>
             </div>
             <ul className="users-list">
-              <li>John</li>
-              <li>Peter</li>
-              <li>Markus</li>
+              {
+                users && users.map((user) => (
+                  <li key={user.id} onClick={() => this.userSelect(user.id)}>{user.name}</li>
+                ))
+              }
             </ul>
           </div>
           <div className="users-info">
-            <User />
+            { selected !== null ? <User {...selected} /> : null }
           </div>
         </div>
       </div>

@@ -4,6 +4,10 @@ import './User.sass';
 
 class User extends Component {
   render() {
+
+    const { id, hobbies } = this.props;
+    // console.log(id);
+
     return (
       <div className="user">
         <div className="add-user">
@@ -18,13 +22,9 @@ class User extends Component {
           <button>Add</button>
         </div>
         <div className="user-hobbies">
-          <Hobby />
-          <Hobby />
-          <Hobby />
-          <Hobby />
-          <Hobby />
-          <Hobby />
-          <Hobby />
+          {
+            hobbies && hobbies.map(hobby => <Hobby key={hobby.name} hobby={hobby} userId={id} />)
+          }
         </div>
       </div>
     );
