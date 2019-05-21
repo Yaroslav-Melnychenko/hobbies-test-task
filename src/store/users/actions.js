@@ -14,6 +14,13 @@ const createUser = (user) => {
   }
 }
 
+// const updateUser = (hobbies) => {
+//   return {
+//     type: 'UPDATE_USER',
+//     hobbies
+//   }
+// }
+
 export const fetchUsers = () => {
   return dispatch => {
     return axios.get('http://localhost:4000/users').then(responce => {
@@ -31,5 +38,21 @@ export const createUserRequest = (userName) => {
     }).then(responce => {
       dispatch(createUser(responce.data));
     })
+  }
+}
+
+export const addUserHobby = (userId, userHobby) => {
+  return dispatch => {
+    return axios.get(`http://localhost:4000/users/${userId}`).then(responce => {
+      const { hobbies } = responce.data;
+      hobbies.push(userHobby);
+      return axios.patch(`http://localhost:4000/users/${userId}`, { "hobbies": hobbies }).then(responce => {
+        // const { hobbies } = responce.data;
+        // dispatch(updateUser(hobbies));
+        return axios.get('http://localhost:4000/users').then(responce => {
+          dispatch(initUsers(responce.data))
+        });
+      })
+    });
   }
 }

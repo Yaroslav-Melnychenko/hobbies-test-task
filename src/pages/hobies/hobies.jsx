@@ -44,7 +44,7 @@ class Hobies extends Component {
     
     const { users } = this.props;
     const { selected } = this.state;
-    // console.log(selected);
+    console.log(users);
 
     return (
       <div className="container">
@@ -64,7 +64,7 @@ class Hobies extends Component {
             </ul>
           </div>
           <div className="users-info">
-            { selected !== null ? <User {...selected} /> : null }
+            { selected !== null ? <User {...selected} userSelect={this.userSelect} /> : null }
           </div>
         </div>
       </div>

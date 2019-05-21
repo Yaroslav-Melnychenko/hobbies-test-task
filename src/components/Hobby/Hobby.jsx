@@ -3,8 +3,8 @@ import './Hobby.sass';
 
 const Hobby = (props) => {
   const { name, passion, year } = props.hobby;
-  const { userId } = props;
-  console.log('userId', userId);
+  // const { userId } = props;
+  // console.log('userId', userId);
   return (
     <div className="hobby">
       <p className="passion">Passion: {passion}</p>
