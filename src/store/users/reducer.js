@@ -1,5 +1,5 @@
 const addUser = (state = [], action) => {
-  // console.log(action.users)
+  console.log(action)
   switch (action.type) {
     case 'INIT_USERS':
       return {

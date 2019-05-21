@@ -20,8 +20,12 @@ class Hobies extends Component {
   }
 
   addUser = () => {
-    // create new user
-    // console.log('create new user', this.state);
+    const { name } = this.state;
+    if (name.length !== 0 ) {
+      this.props.addUser(name).then(() => this.props.fetchUsers());
+    } else {
+      alert('Your name is empty');
+    }
     this.setState({
       name: ''
     });

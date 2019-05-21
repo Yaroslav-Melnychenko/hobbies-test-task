@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUsers } from '../../store/users/actions';
+import { fetchUsers, createUserRequest } from '../../store/users/actions';
 import Hobies from './hobies';
 
 const mapStateToProps = ({ users }) => {
@@ -10,7 +10,8 @@ const mapStateToProps = ({ users }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUsers: (data) => dispatch(fetchUsers(data))
+    fetchUsers: () => dispatch(fetchUsers()),
+    addUser: (userName) => dispatch(createUserRequest(userName))
   };
 };
 
