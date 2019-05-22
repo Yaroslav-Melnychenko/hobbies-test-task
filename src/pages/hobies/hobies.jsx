@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import User from '../../components/User';
+import Head from '../../components/Head';
 import './hobies.sass';
 
 class Hobies extends Component {
@@ -34,7 +35,7 @@ class Hobies extends Component {
   userSelect = (id) => {
     const { users } = this.props;
     const [ user ] = users.filter((user) => user.id === id);
-    // console.log(...user);
+
     this.setState({
       selected: user
     })
@@ -44,11 +45,10 @@ class Hobies extends Component {
     
     const { users } = this.props;
     const { selected } = this.state;
-    // console.log(users);
 
     return (
       <div className="container">
-        <div className="head"><h2>User hobies</h2></div>
+        <Head />
         <div className="main-block">
           <div className="users">
             <div className="search">

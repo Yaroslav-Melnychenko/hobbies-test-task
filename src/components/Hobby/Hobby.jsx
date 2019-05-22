@@ -5,8 +5,6 @@ const Hobby = (props) => {
   const { name, passion, year, id } = props.hobby;
   const { userId, deleteHobby, userSelect } = props;
 
-  // console.log(fetchUsers);
-
   const handleDeleteHobby = (userId, hobbyId) => {
     const confirm = window.confirm("Are you sure ?");
     if (confirm) {
