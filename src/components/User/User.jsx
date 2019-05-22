@@ -35,12 +35,12 @@ class User extends Component {
   render() {
 
     const { id, hobbies, userSelect } = this.props;
-    const { year, name  } = this.state;
+    const { year, name, passion } = this.state;
 
     return (
       <div className="user">
         <div className="add-user">
-          <select className="form-item" onChange={this.inputChange} name="passion">
+          <select className="form-item" onChange={this.inputChange} value={passion} name="passion">
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="Hight">Hight</option>

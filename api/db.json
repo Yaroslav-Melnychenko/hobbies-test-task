@@ -69,24 +69,6 @@
           "passion": "Medium",
           "year": "2007",
           "name": "Riding a bike"
-        },
-        {
-          "id": 0.21072739690652087,
-          "passion": "Low",
-          "year": "4232",
-          "name": "123"
-        }
-      ]
-    },
-    {
-      "id": 0.91894027026859,
-      "name": "Ben",
-      "hobbies": [
-        {
-          "id": 0.35069376632380567,
-          "passion": "Hight",
-          "year": "1234",
-          "name": "Paka"
         }
       ]
     }
