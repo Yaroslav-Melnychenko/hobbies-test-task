@@ -58,7 +58,15 @@ class Hobies extends Component {
             <ul className="users-list">
               {
                 users && users.map((user) => (
-                  <li key={user.id} onClick={() => this.userSelect(user.id)}>{user.name}</li>
+                  <li 
+                    key={user.id} 
+                    onClick={
+                      () => this.userSelect(user.id)
+                    }
+                    className={selected && this.state.selected.id === user.id ? 'active' : null}
+                  >
+                    {user.name}
+                  </li>
                 ))
               }
             </ul>

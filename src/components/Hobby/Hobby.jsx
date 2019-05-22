@@ -8,14 +8,17 @@ const Hobby = (props) => {
   // console.log(fetchUsers);
 
   const handleDeleteHobby = (userId, hobbyId) => {
-    deleteHobby(userId, hobbyId).then(() => userSelect(userId));
+    const confirm = window.confirm("Are you sure ?");
+    if (confirm) {
+      deleteHobby(userId, hobbyId).then(() => userSelect(userId));
+    }
   }
 
   return (
     <div className="hobby">
-      <p className="passion">Passion: {passion}</p>
-      <p className="name">{name}</p>
-      <p className="year">Since {year} <span className="remove" onClick={() => handleDeleteHobby(userId, id)}>X</span></p>
+      <p className="passion hobby-item">Passion: {passion}</p>
+      <p className="name hobby-item">{name}</p>
+      <p className="year hobby-item">Since {year} <span className="remove" onClick={() => handleDeleteHobby(userId, id)}>X</span></p>
     </div>
   );
 }

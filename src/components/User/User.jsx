@@ -40,15 +40,15 @@ class User extends Component {
     return (
       <div className="user">
         <div className="add-user">
-          <select onChange={this.inputChange} name="passion">
+          <select className="form-item" onChange={this.inputChange} name="passion">
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="Hight">Hight</option>
             <option value="Very-Hight">Very-Hight</option>
           </select>
-          <input onChange={this.inputChange} placeholder="Enter user hobby" type="text" name="name" value={name} />
-          <input onChange={this.inputChange} placeholder="Enter year" type="text" name="year" value={year} />
-          <button onClick={this.sendUserHobby}>Add</button>
+          <input className="form-item" onChange={this.inputChange} placeholder="Enter user hobby" type="text" name="name" value={name} />
+          <input className="form-item" onChange={this.inputChange} placeholder="Enter year" type="text" name="year" value={year} />
+          <button className="form-item" onClick={this.sendUserHobby}>Add</button>
         </div>
         <div className="user-hobbies">
           {
