@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import User from '../../components/User';
 import Head from '../../components/Head';
-import './hobies.sass';
+import './hobbies.sass';
 
-class Hobies extends Component {
+class Hobbies extends Component {
 
   state = {
     name: '',
@@ -79,4 +79,4 @@ class Hobies extends Component {
     )
   }
 }
-export default Hobies;
+export default Hobbies;

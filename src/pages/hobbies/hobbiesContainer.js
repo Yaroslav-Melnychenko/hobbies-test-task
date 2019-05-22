@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchUsers, createUserRequest } from '../../store/users/actions';
-import Hobies from './hobies';
+import Hobbies from './hobbies';
 
 const mapStateToProps = ({ users }) => {
   return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hobies);
+export default connect(mapStateToProps, mapDispatchToProps)(Hobbies);

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store/configureStore';
-import Hobies from './pages/hobies';
+import Hobbies from './pages/hobbies';
 
 const App = () => (
   <Provider store={store}>
-    <Hobies />
+    <Hobbies />
   </Provider>
 );
 
