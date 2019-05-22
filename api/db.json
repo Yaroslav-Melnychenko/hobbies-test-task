@@ -21,6 +21,24 @@
           "name": "Going to concerts",
           "passion": "Low",
           "year": "2015"
+        },
+        {
+          "id": 0.48703143652507563,
+          "passion": "Medium",
+          "year": "2013",
+          "name": "Go to cinema"
+        },
+        {
+          "id": 0.4338288271291737,
+          "passion": "Low",
+          "year": "2009",
+          "name": "Playing piano"
+        },
+        {
+          "id": 0.14172592382487736,
+          "passion": "Low",
+          "year": "2015",
+          "name": "Do shopping"
         }
       ]
     },
