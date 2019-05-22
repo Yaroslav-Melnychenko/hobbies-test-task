@@ -6,8 +6,8 @@ class User extends Component {
 
   state = {
     passion: 'Low',
-    year: null,
-    name: null
+    year: '',
+    name: ''
   }
 
   inputChange = (e) => {
@@ -17,13 +17,25 @@ class User extends Component {
   }
 
   sendUserHobby = () => {
-    const { addUserHobby, id, userSelect } = this.props;
-    addUserHobby(id, { id: Math.random(), ...this.state }).then(() => userSelect(id))
+    if (this.state.year === '' || this.state.name === '') {
+      alert('Values should not be empty');
+    } else {
+      const { addUserHobby, id, userSelect } = this.props;
+      addUserHobby(id, { id: Math.random(), ...this.state }).then(() => {
+        userSelect(id);
+        this.setState({
+          passion: 'Low',
+          year: '',
+          name: ''
+        })
+      })
+    }
   }
 
   render() {
 
     const { id, hobbies, userSelect } = this.props;
+    const { year, name  } = this.state;
 
     return (
       <div className="user">
@@ -34,8 +46,8 @@ class User extends Component {
             <option value="Hight">Hight</option>
             <option value="Very-Hight">Very-Hight</option>
           </select>
-          <input onChange={this.inputChange} placeholder="Enter user hobby" type="text" name="name" />
-          <input onChange={this.inputChange} placeholder="Enter year" type="text" name="year" />
+          <input onChange={this.inputChange} placeholder="Enter user hobby" type="text" name="name" value={name} />
+          <input onChange={this.inputChange} placeholder="Enter year" type="text" name="year" value={year} />
           <button onClick={this.sendUserHobby}>Add</button>
         </div>
         <div className="user-hobbies">
