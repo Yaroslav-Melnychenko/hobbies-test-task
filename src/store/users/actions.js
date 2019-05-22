@@ -14,13 +14,6 @@ const createUser = (user) => {
   }
 }
 
-// const updateUser = (hobbies) => {
-//   return {
-//     type: 'UPDATE_USER',
-//     hobbies
-//   }
-// }
-
 export const fetchUsers = () => {
   return dispatch => {
     return axios.get('http://localhost:4000/users').then(responce => {
@@ -46,13 +39,25 @@ export const addUserHobby = (userId, userHobby) => {
     return axios.get(`http://localhost:4000/users/${userId}`).then(responce => {
       const { hobbies } = responce.data;
       hobbies.push(userHobby);
-      return axios.patch(`http://localhost:4000/users/${userId}`, { "hobbies": hobbies }).then(responce => {
-        // const { hobbies } = responce.data;
-        // dispatch(updateUser(hobbies));
+      return axios.patch(`http://localhost:4000/users/${userId}`, { "hobbies": hobbies }).then(() => {
         return axios.get('http://localhost:4000/users').then(responce => {
-          dispatch(initUsers(responce.data))
+          dispatch(initUsers(responce.data));
         });
       })
     });
+  }
+}
+
+export const deleteHobby = (userId, hobbyId) => {
+  return dispatch => {
+    return axios.get(`http://localhost:4000/users/${userId}`).then(responce => {
+      const { hobbies } = responce.data;
+      const updatingHobbies = hobbies.filter((hobby) => hobby.id !== hobbyId);
+      return axios.patch(`http://localhost:4000/users/${userId}`, { "hobbies": updatingHobbies }).then(() => {
+        return axios.get('http://localhost:4000/users').then(responce => {
+          dispatch(initUsers(responce.data));
+        });
+      })
+    })
   }
 }

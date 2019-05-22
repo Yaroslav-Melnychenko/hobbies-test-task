@@ -23,7 +23,7 @@ class User extends Component {
 
   render() {
 
-    const { id, hobbies } = this.props;
+    const { id, hobbies, userSelect } = this.props;
 
     return (
       <div className="user">
@@ -40,7 +40,7 @@ class User extends Component {
         </div>
         <div className="user-hobbies">
           {
-            hobbies && hobbies.map(hobby => <Hobby key={hobby.id} hobby={hobby} userId={id} />)
+            hobbies && hobbies.map(hobby => <Hobby key={hobby.id} hobby={hobby} userId={id} userSelect={userSelect} />)
           }
         </div>
       </div>

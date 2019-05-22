@@ -1,1 +1,1 @@
-export { default } from './Hobby';
+export { default } from './HobbyContainer';

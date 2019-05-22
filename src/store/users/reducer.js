@@ -9,10 +9,6 @@ const addUser = (state = [], action) => {
       return {
         users: [...state.users, action.user]
       }
-    // case 'UPDATE_USER':
-    //     return {
-          
-    //     }
     default:
       return state
   }

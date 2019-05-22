@@ -44,7 +44,7 @@ class Hobies extends Component {
     
     const { users } = this.props;
     const { selected } = this.state;
-    console.log(users);
+    // console.log(users);
 
     return (
       <div className="container">
