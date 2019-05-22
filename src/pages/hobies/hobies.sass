@@ -1,17 +1,15 @@
 .container
   max-width: 1000px
   margin: 65px auto
-
+  padding: 0 15px
 .head
   background-color: #f3f3f3
   padding:  1px 15px
   border-bottom: solid 5px #fff
-
 .main-block
   display: flex
   padding:  8px 15px
   background-color: #f3f3f3
-  // max-height: 500px
   .users
     width: 25%
     padding-right: 15px
@@ -50,4 +48,11 @@
       &.active
         background-color: #2196F3
         color: #fff
-      
+@media screen and (max-width: 800px)
+  .main-block
+    display: block
+    .users
+      width: 100%
+    .users-info
+      width: 100%
+      padding: 0

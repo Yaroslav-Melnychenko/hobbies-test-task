@@ -3,9 +3,9 @@
   input
     padding-left: 15px
 .form-item
-  flex: 1 0 20%
+  flex: 1 0 auto
   margin-right: 1%
-  line-height: 21px
+  line-height: 23px
   border: solid 1px #cacaca
   &:last-child
     margin-right: 0
@@ -17,3 +17,15 @@
     cursor: pointer
     &:hover
       opacity: 0.7
+
+@media screen and (max-width: 800px)
+  .add-user
+    display: block
+    border-top: solid 1px #cacaca
+    padding-top: 15px
+    margin-top: 25px
+  .form-item
+    width: 100%
+    margin: 7px 0
+    box-sizing: border-box
+    height: 25px
